@@ -33,7 +33,7 @@
   </div>
 
 
-  <form>
+  <form th:action="@{/guardarPresion}" th:object="${presionArterial}">
     <!-- Fecha -->
     <div class="mb-3">
       <h1 class="text-center mb-4">Fecha:</h1>
@@ -64,16 +64,16 @@
       <label class="form-label">Presion</label>
       <div class="row g-2">
         <div class="col-md-4">
-          <label for="presion-alta" class="form-label">Presion alta:</label>
-          <input type="number" class="form-control" id="presion-alta" placeholder="Presion Alta (mmHg)" required>
+          <label for="presionAlta" class="form-label">Presion alta:</label>
+          <input type="number" class="form-control" id="presionAlta" th:field="*{presionAlta}" placeholder="Presion Alta (mmHg)" required>
         </div>
         <div class="col-md-4">
-          <label for="presion-baja" class="form-label">Presion baja:</label>
-          <input type="number" class="form-control" id="presion-baja" placeholder="Presion Baja (mmHg)" required>
+          <label for="presionBaja" class="form-label">Presion baja:</label>
+          <input type="number" class="form-control" id="presionBaja" th:field="*{presionBaja}" placeholder="Presion Baja (mmHg)" required>
         </div>
         <div class="col-md-4">
           <label for="pulsaciones" class="form-label">Pulsaciones</label>
-          <input type="number" class="form-control" id="pulsaciones" placeholder="Pulsaciones (ppm)" required>
+          <input type="number" class="form-control" id="pulsaciones" th:field="*{pulsaciones}" placeholder="Pulsaciones (ppm)" required>
         </div>
       </div>
     </div>

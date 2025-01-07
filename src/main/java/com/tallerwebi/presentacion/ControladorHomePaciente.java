@@ -1,6 +1,7 @@
 package com.tallerwebi.presentacion;
 
 import com.tallerwebi.dominio.Paciente;
+import com.tallerwebi.dominio.PresionArterial;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,9 @@ public class ControladorHomePaciente {
 
         Paciente paciente = new Paciente("Joao", "Pontinho");
 
+
         modelo.put("paciente", paciente);
+
 
         return new ModelAndView("home", modelo);
     }
@@ -31,6 +34,8 @@ public class ControladorHomePaciente {
     @RequestMapping(value = "/controlPresion", method = RequestMethod.GET)
     public ModelAndView controlPresion() {
         ModelMap modelo = new ModelMap();
+        PresionArterial presionArterial = new PresionArterial();
+        modelo.put("presionArterial", presionArterial);
         return new ModelAndView("controlPresion", modelo);
     }
 
