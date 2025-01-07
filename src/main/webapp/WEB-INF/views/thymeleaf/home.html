@@ -1,35 +1,48 @@
 <!DOCTYPE HTML>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Taller Web I</title>
 
-  <!-- Boostrap core css -->
-  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}" />
 
-  <!-- custom style -->
-  <link rel="stylesheet" th:href="@{/css/main.css}"/>
-
+  <!-- Custom style -->
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">UNLAM</a>
+  <a class="navbar-brand" href="#">MEMORIA MEDICA</a>
+  <a href="#" class="btn btn-primary btn-lg">VOLVER AL INICIO</a>
+  <a href="#" class="btn disabled btn-primary btn-lg">CERRAR SESION</a>
 </nav>
 
-<main role="main" class="container">
-  <div class = "container">
-    <h1>Bienvenidos a Taller Web 1</h1>
+<!--<div th:object="${paciente}" >
+      <label th:text="*{nombre}" />
+      <label th:text="*{apellido}" />
+</div>-->
 
-    <a href="login.html" class="btn btn-lg btn-primary btn-block">Volver</a>
+<main role="main" class="container d-flex justify-content-center align-items-center">
+  <div class="text-center">
+    <h1 class="mb-4">HISTORIA CLINICA - PACIENTE: <div th:object="${paciente}" >
+      <label class="text-danger" th:text="*{nombre}" />
+      <label  class="text-danger" th:text="*{apellido}" />
+    </div> </h1>
+
+    <a href="#" class="btn btn-primary btn-lg" th:href="@{/controlPresion.html}">Control Presion</a>
+    <a href="#" class="btn disabled btn-primary btn-lg" >Control Diabetes</a>
+    <a href="#" class="btn disabled btn-primary btn-lg">Control Peso</a>
+    <a href="#" class="btn disabled btn-primary btn-lg">Control Horario Medicamentos</a>
+    <br><br>
+
   </div>
 </main>
-<!-- /.container -->
 
-<!-- Boostrap core js -->
+<!-- Bootstrap core JS -->
 <script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
 </body>
 </html>

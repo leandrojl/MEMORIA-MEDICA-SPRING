@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Taller Web I</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}" />
+
+  <!-- Custom style -->
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">MEMORIA MEDICA</a>
+  <a href="#" class="btn btn-primary btn-lg" th:href="@{/home}">VOLVER AL INICIO</a>
+  <a href="#" class="btn disabled btn-primary btn-lg">CERRAR SESION</a>
+</nav>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Control de Presion</h2>
+
+
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <div class="d-grid gap-3">
+        <a href="#" class="btn disabled btn-primary btn-lg">HISTORIAL PRESION</a>
+      </div>
+    </div>
+  </div>
+
+
+  <form>
+    <!-- Fecha -->
+    <div class="mb-3">
+      <h1 class="text-center mb-4">Fecha:</h1>
+      <div class="row g-2">
+        <div class="col-md-4">
+          <label for="dia" class="form-label">Dia:</label>
+          <input type="number" class="form-control" id="dia" placeholder="Dia" min="1" max="31" required>
+        </div>
+        <div class="col-md-4">
+          <label for="mes" class="form-label">Mes:</label>
+          <input type="number" class="form-control" id="mes" placeholder="Mes" min="1" max="12" required>
+        </div>
+        <div class="col-md-4">
+          <label for="anio" class="form-label">Anio:</label>
+          <input type="number" class="form-control" id="anio" placeholder="ANIO" min="1900" max="2100" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horario -->
+    <div class="mb-3">
+      <label for="horario" class="form-label">Horario</label>
+      <input type="time" class="form-control" id="horario" required>
+    </div>
+
+    <!-- Presión -->
+    <div class="mb-3">
+      <label class="form-label">Presion</label>
+      <div class="row g-2">
+        <div class="col-md-4">
+          <label for="presion-alta" class="form-label">Presion alta:</label>
+          <input type="number" class="form-control" id="presion-alta" placeholder="Presion Alta (mmHg)" required>
+        </div>
+        <div class="col-md-4">
+          <label for="presion-baja" class="form-label">Presion baja:</label>
+          <input type="number" class="form-control" id="presion-baja" placeholder="Presion Baja (mmHg)" required>
+        </div>
+        <div class="col-md-4">
+          <label for="pulsaciones" class="form-label">Pulsaciones</label>
+          <input type="number" class="form-control" id="pulsaciones" placeholder="Pulsaciones (ppm)" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-lg">ENVIAR FORMULARIO</button>
+    </div>
+  </form>
+<!-- Bootstrap core JS -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
