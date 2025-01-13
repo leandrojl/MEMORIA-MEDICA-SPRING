@@ -31,13 +31,7 @@ public class ControladorHomePaciente {
         return new ModelAndView("home", modelo);
     }
 
-    @RequestMapping(value = "/controlPresion", method = RequestMethod.GET)
-    public ModelAndView controlPresion() {
-        ModelMap modelo = new ModelMap();
-        PresionArterial presionArterial = new PresionArterial();
-        modelo.put("presionArterial", presionArterial);
-        return new ModelAndView("controlPresion", modelo);
-    }
+
 
     @RequestMapping(value = "/controlPeso", method = RequestMethod.GET)
     public ModelAndView controlPeso() {
